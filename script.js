@@ -2,6 +2,7 @@ import { listCategory, allCategory } from './product.js'
 
 const navLinks = document.querySelectorAll('.nav-link')
 const colCenter = document.querySelector('.colCenter')
+const colRight = document.querySelector('.colRight')
 
 navLinks.forEach((link, index) => {
   link.textContent = listCategory[index]
@@ -12,6 +13,12 @@ navLinks.forEach((link, index) => {
 
   link.addEventListener('click', (event) => {
     event.preventDefault()
+
+    navLinks.forEach((link) => {
+      link.classList.remove('active')
+    })
+    link.classList.add('active')
+
     while (colCenter.firstChild) {
       colCenter.removeChild(colCenter.firstChild)
     }
@@ -50,8 +57,16 @@ function shortProduct(link) {
   productTitleH3.classList.add('product-title')
   productTitleH3.innerHTML = link.name
   productInfoDiv.appendChild(productTitleH3)
+
   const priceDiv = document.createElement('div')
   priceDiv.classList.add('price')
   productInfoDiv.appendChild(priceDiv)
   priceDiv.innerHTML = `Ціна: ${link.price} &#8372;`
 }
+
+const borderProduct = document.querySelectorAll('.border')
+borderProduct.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    colRight.style.display = 'block'
+  })
+})

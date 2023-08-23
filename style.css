@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 .navbar{
-    width: 100%;
+    /* width: 100%; */
     min-height: 50px;
     background-color: #e3f2fd;
 }
@@ -38,6 +38,7 @@ body {
   }
 .colRight{
     margin: 10px 0 5px 5px;
+    flex: 0.6;
     display: none;
     
 }
@@ -47,6 +48,8 @@ body {
 }
 .nav-link{
     padding: 10px;
+    text-decoration: none;
+    color: black;
 }
 .footer {
     min-height: 50px;
@@ -54,12 +57,18 @@ body {
     text-align: center;
     margin: 5px 0 0 0;
 }
+.active{
+   color: #ffffff;
+   /* font-weight: bold; */
+   background-color: #3498db;
+   border-radius: 2px;
+}
   /* =========== карточка товара мала================================ */
 
 .border {
     width: 220px;
     margin: 2px 5px;
-    /* margin: 0 auto; */
+    margin: 5px auto;
     background: white;
     padding: 20px;
     border: 1px solid #F1E7E8;
@@ -71,8 +80,8 @@ body {
  }
  .product-wrap {
     position: relative;
-    height: 300px; /* Задана ширина */
-  max-height: 100%; /* Фото не буде ширше контейнера */
+    height: 300px;
+  max-height: 100%;
   width: auto;
  }
  .product-wrap:after {
@@ -164,4 +173,25 @@ body {
     font-style: italic;
     font-weight: bold;
  }
- /* =========== end карточка товара мала================================ */
+ /* =========== button buy ================================ */
+ .buy-button {
+   display: inline-block;
+   padding: 10px 20px;
+   margin: 10px;
+   font-size: 16px;
+   background-color: #3498db;
+   color: #fff;
+   border: none;
+   border-radius: 2px;
+   cursor: pointer;
+   transition: background-color 0.3s, transform 0.2s;
+ }
+ 
+ .buy-button:hover {
+   background-color: #2980b9;
+   transform: scale(1.05);
+ }
+ .buy-button:active {
+   background-color: #216a94;
+ }
+ 
